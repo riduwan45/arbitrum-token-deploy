@@ -6,7 +6,7 @@ import {
   http,
 } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
-import { mainnet } from "viem/chains";
+import { sepolia } from "viem/chains";
 
 import { L1GatewayRouterAbi } from "./abis/L1GatewayRouter";
 
@@ -18,7 +18,7 @@ if (!privateKey) {
 
 async function main() {
   const l1 = createPublicClient({
-    transport: http(mainnet.rpcUrls.default[0]),
+    transport: http(sepolia.rpcUrls.default[0]),
   });
   const l2 = createPublicClient({
     transport: http("https://rpc.figarolabs.dev"),
@@ -29,7 +29,7 @@ async function main() {
 
   const wallet = createWalletClient({
     account: privateKeyToAccount(privateKey!),
-    chain: mainnet,
+    chain: sepolia,
     transport: http(),
   });
 
