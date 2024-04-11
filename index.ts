@@ -38,7 +38,7 @@ async function main() {
   });
 
   const l1GasLimit = 300_000n;
-  const l2GasLimit = 500_000n;
+  const l2GasLimit = 1_000_000n;
   let l1GasCost = l1FeeData.maxFeePerGas ?? l1FeeData.gasPrice;
   let l2GasCost = l2FeeData.maxFeePerGas ?? l2FeeData.gasPrice;
   l1GasCost = l1GasCost + l1GasCost / 10n;
